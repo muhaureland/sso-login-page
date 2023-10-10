@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>Akun SSO</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="static/count-master/css/base.css">
+    <link rel="stylesheet" href="static/count-master/css/vendor.css">
+    <link rel="stylesheet" href="static/count-master/css/main.css">
+
+    <!-- script
+    ================================================== -->
+    <script src="static/count-master/js/modernizr.js"></script>
+    <script src="static/count-master/js/pace.min.js"></script>
+
+    <!-- favicons
+    ================================================== -->
+    <link rel="shortcut icon" href="static/logo/uti.png" type="image/x-icon">
+    <link rel="icon" href="static/logo/uti.png" type="image/x-icon">
+
+
+
+
+    <link rel="stylesheet" href="static/count-master/css/hendras.css">
+
+
+
+
+</head>
+
+<body onLoad="initClock()">
+
+    <!-- home
+    ================================================== -->
+    <main class="s-home s-home--particles">
+
+        <div id="particles-js" class="home-particles"></div>
+
+        <div class="gradient-overlay"></div>
+
+        <div class="home-content">
+
+            <!-- <div class="home-logo">
+
+
+                <a style="font-size: 25px; color: aliceblue;" href="/accounts/login/">
+                    <p class="fas fa-sign-in-alt">asfasfadf</p>
+
+
+                </a>
+            </div> -->
+
+
+
+            <div class="row">
+
+                <!-- <span class="brand-logo"> -->
+                <img style="margin-top: 5.8rem;" src="static/logo/unand2.png">
+                <!-- </span> -->
+                <div class="col-eight home-content__text pull-left" onLoad="initClock()">
+                    <!-- <h3>klik <a target="_blank" href="https://sso.umkt.ac.id/">disini</a></h3> -->
+                    <h2 style="color: aliceblue; ">Single Sign-On
+                        <div>
+                            <h1>
+                                Universitas Andalas
+                            </h1>
+                        </div>
+                    </h2>
+
+                    <img style="width: 100px;" src="/static/logo/logo-sso2.png" alt="">
+                    <div style="color: aliceblue;">
+                        <form method="POST" autocomplete="off">
+                            <div class="form-row">
+                                <div class="col">
+                                    <input class="input email" type="text" data="Email" name="email" autocomplete="off"
+                                        placeholder="Nama Pengguna">
+                                </div>
+                                <div class="col">
+                                    <input class="input" type="password" name="password" autocomplete="off"
+                                        placeholder="Masukkan Password">
+                                    <div class="float-right">
+                                        <p class="no-padding text-register">
+                                            <a href="https://sso.samarindakota.go.id/password/reset">Lupa Password
+                                                ?</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div><button type="submit">LOGIN</button>
+                        </form>
+                    </div>
+
+
+                </div> <!-- end home-content__text -->
+
+                <div class="col-four home-content__counter">
+                    <h3 style="color: aliceblue;">Time To Kejajaan Bangsa
+                        <div id="timedate">
+                            <a id="h">12</a> :
+                            <a id="m">00</a>:
+                            <a id="s">00</a>:
+                            <a id="mi">000</a><br />
+                            <a id="mon">January</a>
+                            <a id="d">1</a>,
+                            <a id="y">0</a>
+
+                        </div>
+                    </h3>
+
+                    <!-- end home-content__clock -->
+                </div> <!-- end home-content__counter -->
+
+            </div>
+
+        </div> <!-- end home-content -->
+
+    </main> <!-- end s-home -->
+
+
+
+    <!-- <a class="info-toggle" href="#0"> -->
+    <!-- <span class="info-menu-icon"></span> -->
+    <!-- </a> -->
+
+
+    <!-- preloader
+    ================================================== -->
+    <div id="preloader">
+        <div id="loader">
+            <div class="line-scale-pulse-out">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Java Script
+    ================================================== -->
+    <script src="static/count-master/js/jquery-3.2.1.min.js"></script>
+    <script src="static/count-master/js/plugins.js"></script>
+    <script src="static/count-master/js/polygons.js"></script>
+    <script src="static/count-master/js/main.js"></script>
+
+
+
+
+    <script>
+        // START CLOCK SCRIPT
+
+        Number.prototype.pad = function (n) {
+            for (var r = this.toString(); r.length < n; r = 0 + r);
+            return r;
+        };
+
+        function updateClock() {
+            var now = new Date();
+            var milli = now.getMilliseconds(),
+                sec = now.getSeconds(),
+                min = now.getMinutes(),
+                hou = now.getHours(),
+                mo = now.getMonth(),
+                dy = now.getDate(),
+                yr = now.getFullYear();
+            var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+            var tags = ["mon", "d", "y", "h", "m", "s", "mi"],
+                corr = [months[mo], dy, yr, hou.pad(2), min.pad(2), sec.pad(2), milli];
+            for (var i = 0; i < tags.length; i++)
+                document.getElementById(tags[i]).firstChild.nodeValue = corr[i];
+        }
+
+        function initClock() {
+            updateClock();
+            window.setInterval("updateClock()", 1);
+        }
+
+        // END CLOCK SCRIPT
+    </script>
+
+
+
+
+</body>
+
+</html>
